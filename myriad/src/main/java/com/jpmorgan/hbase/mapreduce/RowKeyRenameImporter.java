@@ -35,7 +35,7 @@ import com.jpmorgan.hbase.row.rename.RowKeyRename;
 public class RowKeyRenameImporter extends TableMapper<ImmutableBytesWritable, Mutation> {
 	private static final Log LOG = LogFactory.getLog(RowKeyRenameImporter.class);
 	public final static String WAL_DURABILITY = "import.wal.durability";
-	public final static String ROWKEY_HASH_IMPL = "row.key.hash";
+	public final static String ROWKEY_RENAME_IMPL = "row.key.rename";
 	private List<UUID> clusterIds;
 	private Durability durability;
 	private RowKeyRename rowkeyRenameAlgo;
@@ -73,8 +73,8 @@ public class RowKeyRenameImporter extends TableMapper<ImmutableBytesWritable, Mu
 				put = new Put(renameRowKey.get());
 			}
 
-			Cell hashedKV = convertKv(kv, renameRowKey);
-			addPutToKv(put, hashedKV);
+			Cell renamedKV = convertKv(kv, renameRowKey);
+			addPutToKv(put, renamedKV);
 
 			if (put != null) {
 				if (durability != null) {
@@ -116,7 +116,7 @@ public class RowKeyRenameImporter extends TableMapper<ImmutableBytesWritable, Mu
 	public void setup(Context context) {
 		Configuration conf = context.getConfiguration();
 		String durabilityStr = conf.get(WAL_DURABILITY);
-		String hashRowKey = conf.get(ROWKEY_HASH_IMPL, "com.jpmorgan.hbase.row.rename.DefaultRowKeyRenameImpl");
+		String renameRowKey = conf.get(ROWKEY_RENAME_IMPL, "com.jpmorgan.hbase.row.rename.DefaultRowKeyRenameImpl");
 
 		if (durabilityStr != null) {
 			durability = Durability.valueOf(durabilityStr.toUpperCase(Locale.ROOT));
@@ -128,8 +128,8 @@ public class RowKeyRenameImporter extends TableMapper<ImmutableBytesWritable, Mu
 			zkw = new ZooKeeperWatcher(conf, context.getTaskAttemptID().toString(), null);
 			clusterIds = Collections.singletonList(ZKClusterId.getUUIDForCluster(zkw));
 			//This is for rowkey rename
-			Class<RowKeyRename> hashRowKeyClass = (Class<RowKeyRename>) Class.forName(hashRowKey);
-			rowkeyRenameAlgo = ReflectionUtils.newInstance(hashRowKeyClass);
+			Class<RowKeyRename> renameRowKeyClass = (Class<RowKeyRename>) Class.forName(renameRowKey);
+			rowkeyRenameAlgo = ReflectionUtils.newInstance(renameRowKeyClass);
 			
 		} catch (ZooKeeperConnectionException e) {
 			ex = e;
@@ -141,7 +141,7 @@ public class RowKeyRenameImporter extends TableMapper<ImmutableBytesWritable, Mu
 			ex = e;
 			LOG.error("Problem setting up task", e);
 		} catch (ClassNotFoundException e) {
-			LOG.error("Problem finding the row key hashing class ", e);
+			LOG.error("Problem finding the row key rename class ", e);
 			throw new RuntimeException(e);
 		} finally {
 			if (zkw != null)

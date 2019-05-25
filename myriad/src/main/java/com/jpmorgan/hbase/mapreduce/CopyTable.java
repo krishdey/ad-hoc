@@ -173,7 +173,7 @@ public class CopyTable extends Configured implements Tool {
 			System.err.println("ERROR: " + errorMsg);
 		}
 		System.err.println("Usage: CopyTable [general options] [--starttime=X] [--endtime=Y] "
-				+ "[--new.name=NEW] [--peer.adr=ADR] [--newhash] <tablename>");
+				+ "[--new.name=NEW] [--peer.adr=ADR] [--renamerow] <tablename>");
 		System.err.println();
 		System.err.println("Options:");
 		System.err.println(" rs.class     hbase.regionserver.class of the peer cluster");
