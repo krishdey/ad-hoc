@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" project="myriad" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="48.619">
-    <testcase name="testCopyTable" classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="12.605"/>
-    <testcase name="testMainMethod" classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="0.03"/>
-    <testcase name="testRenameFamily" classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="5.092"/>
-    <testcase name="testCopyTableWithBulkload" classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="12.519"/>
-    <testcase name="testCopyTabletWithHash" classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="18.373"/>
-  </testsuite>
-</testrun>

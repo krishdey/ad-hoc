@@ -1,5 +1,0 @@
-package com.jpmorgan.hadoop.hbase.row.hash;
-
-public interface RowKeyHashAlgorithm {
-
-}

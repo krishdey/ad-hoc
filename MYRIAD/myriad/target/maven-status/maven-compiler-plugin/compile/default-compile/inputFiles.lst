@@ -1,5 +1,0 @@
-/Hadoop/MYRIAD/myriad/src/main/java/com/jpmorgan/hbase/mapreduce/RowKeyHashImporter.java
-/Hadoop/MYRIAD/myriad/src/main/java/com/jpmorgan/hbase/row/rename/RowKeyRename.java
-/Hadoop/MYRIAD/myriad/src/main/java/com/jpmorgan/hbase/row/rename/MD5Util.java
-/Hadoop/MYRIAD/myriad/src/main/java/com/jpmorgan/hbase/mapreduce/CopyTable.java
-/Hadoop/MYRIAD/myriad/src/main/java/com/jpmorgan/hbase/row/rename/DefaultRowKeyRenameImpl.java

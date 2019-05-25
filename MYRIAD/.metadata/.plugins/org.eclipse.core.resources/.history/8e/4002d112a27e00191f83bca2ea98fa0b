@@ -1,8 +1,0 @@
-package com.jpmorgan.hadoop.hbase.row.hash;
-
-import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
-
-public interface RowKeyHashAlgorithm {
-	
-	public byte[] hashRowKey(ImmutableBytesWritable key);
-}
