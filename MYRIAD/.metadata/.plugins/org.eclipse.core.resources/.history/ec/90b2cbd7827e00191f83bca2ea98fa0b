@@ -1,0 +1,10 @@
+package com.myriad.aim;
+
+public class TestHbasePut {
+	
+	@Test
+	public void testPut() {
+		
+	}
+
+}

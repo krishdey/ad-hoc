@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestHbasePut" project="myriad" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.myriad.aim.TestHbasePut" time="48.725">
+    <testcase name="testCopyTable" classname="com.myriad.aim.TestHbasePut" time="12.327"/>
+    <testcase name="doCopyTableTestWithHash" classname="com.myriad.aim.TestHbasePut" time="11.964"/>
+    <testcase name="testMainMethod" classname="com.myriad.aim.TestHbasePut" time="0.024"/>
+    <testcase name="testRenameFamily" classname="com.myriad.aim.TestHbasePut" time="4.962"/>
+    <testcase name="testCopyTableWithBulkload" classname="com.myriad.aim.TestHbasePut" time="19.447"/>
+  </testsuite>
+</testrun>

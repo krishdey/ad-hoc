@@ -1,0 +1,22 @@
+package com.myriad.aim;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import javax.management.RuntimeErrorException;
+
+public class MD5Util {
+	
+
+	public static String getMD5(String input) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] messageDigest = md.digest(input.getBytes(StandardCharsets.UTF_8));
+			return format32Way3(messageDigest);
+		}catch(NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+}
