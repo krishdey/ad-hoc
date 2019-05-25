@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="5" failures="0" name="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" time="40.562" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.121-b13"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Hadoop/MYRIAD/myriad"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Hadoop/MYRIAD/myriad"/>
+    <property name="java.runtime.version" value="1.8.0_121-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/96/d8wklxy54j3d7bc5xhs0_gpm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Hadoop/MYRIAD/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf9136599589037862625.tmp"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/krishdey/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.14.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/krishdey"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="krishdey"/>
+    <property name="java.class.path" value="/Users/krishdey/.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.9.0.20180606-2035/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_121"/>
+    <property name="java.ext.dirs" value="/Users/krishdey/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Hadoop/MYRIAD/myriad/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" name="testCopyTable" time="13.187"/>
+  <testcase classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" name="testMainMethod" time="0.019"/>
+  <testcase classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" name="testRenameFamily" time="4.977"/>
+  <testcase classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" name="testCopyTableWithBulkload" time="12.949"/>
+  <testcase classname="com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable" name="testCopyTabletWithRowRenamed" time="9.43">
+    <error message="com/jpmorgan/hadoop/hbase/mapreduce/RowKeyHashImporter" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: com/jpmorgan/hadoop/hbase/mapreduce/RowKeyHashImporter
+	at com.jpmorgan.hadoop.hbase.mapreduce.CopyTable.createSubmittableJob(CopyTable.java:155)
+	at com.jpmorgan.hadoop.hbase.mapreduce.CopyTable.run(CopyTable.java:343)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+	at com.jpmorgan.hadoop.hbase.mapreduce.TestHbaseCopyTable.testCopyTabletWithRowRenamed(TestHbaseCopyTable.java:217)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: com.jpmorgan.hadoop.hbase.mapreduce.RowKeyHashImporter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 more
+</error>
+    <system-err>19/05/25 10:10:58 INFO master.HMaster: Client=krishdey//192.168.1.2 create &apos;testCopyTabletWithRowRenamed1&apos;, {NAME =&gt; &apos;family&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1&apos;, IN_MEMORY =&gt; &apos;false&apos;, KEEP_DELETED_CELLS =&gt; &apos;FALSE&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, TTL =&gt; &apos;FOREVER&apos;, COMPRESSION =&gt; &apos;NONE&apos;, MIN_VERSIONS =&gt; &apos;0&apos;, BLOCKCACHE =&gt; &apos;true&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;}
+19/05/25 10:10:58 INFO server.PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x16aef53fd170000 type:create cxid:0x3eb zxid:0xee txntype:-1 reqpath:n/a Error Path:/hbase/table-lock/testCopyTabletWithRowRenamed1 Error:KeeperErrorCode = NoNode for /hbase/table-lock/testCopyTabletWithRowRenamed1
+19/05/25 10:10:58 INFO hdfs.StateChange: BLOCK* allocateBlock: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed1/.tmp/.tableinfo.0000000001. BP-766101069-192.168.1.2-1558793415286 blk_1073741852_1028{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW]]}
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028 src: /127.0.0.1:58057 dest: /127.0.0.1:57856
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028 src: /127.0.0.1:58058 dest: /127.0.0.1:57847
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028 src: /127.0.0.1:58059 dest: /127.0.0.1:57851
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58059, dest: /127.0.0.1:57851, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 9a8b6e7e-bb61-48ab-b275-7db5c1f77dd5, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, duration: 4398597
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, type=LAST_IN_PIPELINE, downstreams=0:[] terminating
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57851 is added to blk_1073741852_1028{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW]]} size 0
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58058, dest: /127.0.0.1:57847, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: dca8c372-7ddc-4bf3-bba4-321f20c73e43, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, duration: 5473276
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57847 is added to blk_1073741852_1028{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW]]} size 0
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58057, dest: /127.0.0.1:57856, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 2a22a541-450e-4f36-8808-7461afcad19c, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, duration: 5282405
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741852_1028, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57856 is added to blk_1073741852_1028{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-3a34709c-4263-44eb-a272-70441b646ba6:NORMAL:127.0.0.1:57856|FINALIZED]]} size 0
+19/05/25 10:10:58 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed1/.tmp/.tableinfo.0000000001 is closed by DFSClient_NONMAPREDUCE_-36576917_1
+19/05/25 10:10:58 INFO regionserver.HRegion: creating HRegion testCopyTabletWithRowRenamed1 HTD == &apos;testCopyTabletWithRowRenamed1&apos;, {NAME =&gt; &apos;family&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1&apos;, IN_MEMORY =&gt; &apos;false&apos;, KEEP_DELETED_CELLS =&gt; &apos;FALSE&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, TTL =&gt; &apos;FOREVER&apos;, COMPRESSION =&gt; &apos;NONE&apos;, MIN_VERSIONS =&gt; &apos;0&apos;, BLOCKCACHE =&gt; &apos;true&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;} RootDir = hdfs://localhost:57846/user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp Table name == testCopyTabletWithRowRenamed1
+19/05/25 10:10:58 INFO hdfs.StateChange: BLOCK* allocateBlock: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/.regioninfo. BP-766101069-192.168.1.2-1558793415286 blk_1073741853_1029{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW]]}
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029 src: /127.0.0.1:58060 dest: /127.0.0.1:57847
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029 src: /127.0.0.1:58061 dest: /127.0.0.1:57851
+19/05/25 10:10:58 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029 src: /127.0.0.1:58062 dest: /127.0.0.1:57856
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58062, dest: /127.0.0.1:57856, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 2a22a541-450e-4f36-8808-7461afcad19c, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, duration: 8396358
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, type=LAST_IN_PIPELINE, downstreams=0:[] terminating
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57856 is added to blk_1073741853_1029{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW]]} size 0
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58061, dest: /127.0.0.1:57851, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 9a8b6e7e-bb61-48ab-b275-7db5c1f77dd5, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, duration: 9672148
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:58 INFO DataNode.clienttrace: src: /127.0.0.1:58060, dest: /127.0.0.1:57847, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: dca8c372-7ddc-4bf3-bba4-321f20c73e43, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, duration: 9134061
+19/05/25 10:10:58 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741853_1029, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57851 is added to blk_1073741853_1029{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-1583d07f-3736-4bca-ab06-540a15139aa4:NORMAL:127.0.0.1:57851|FINALIZED]]} size 0
+19/05/25 10:10:58 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57847 is added to blk_1073741853_1029{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-1583d07f-3736-4bca-ab06-540a15139aa4:NORMAL:127.0.0.1:57851|FINALIZED], ReplicaUnderConstruction[[DISK]DS-de30c698-59e0-4f05-9d29-cfa49866aa5e:NORMAL:127.0.0.1:57847|FINALIZED]]} size 0
+19/05/25 10:10:58 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/.regioninfo is closed by DFSClient_NONMAPREDUCE_-36576917_1
+19/05/25 10:10:58 INFO regionserver.HRegion: Closed testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6.
+19/05/25 10:10:58 INFO hbase.MetaTableAccessor: Added 1
+19/05/25 10:10:58 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed1 state from null to ENABLING
+19/05/25 10:10:59 INFO master.AssignmentManager: Bulk assigning 1 region(s) across 3 server(s), round-robin=true
+19/05/25 10:10:59 INFO master.AssignmentManager: Assigning 1 region(s) to krish-217,57877,1558793423029
+19/05/25 10:10:59 INFO master.RegionStates: Transition {dbab42e83ae5459e16264b22f75eecf6 state=OFFLINE, ts=1558793459014, server=null} to {dbab42e83ae5459e16264b22f75eecf6 state=PENDING_OPEN, ts=1558793459020, server=krish-217,57877,1558793423029}
+19/05/25 10:10:59 INFO regionserver.RSRpcServices: Open testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6.
+19/05/25 10:10:59 INFO master.RegionStates: Transition {dbab42e83ae5459e16264b22f75eecf6 state=PENDING_OPEN, ts=1558793459020, server=krish-217,57877,1558793423029} to {dbab42e83ae5459e16264b22f75eecf6 state=OPENING, ts=1558793459038, server=krish-217,57877,1558793423029}
+19/05/25 10:10:59 INFO hfile.CacheConfig: blockCache=LruBlockCache{blockCount=1, currentSize=1568312, freeSize=1525577800, maxSize=1527146112, heapSize=1568312, minSize=1450788736, minFactor=0.95, multiSize=725394368, multiFactor=0.5, singleSize=362697184, singleFactor=0.25}, cacheDataOnRead=true, cacheDataOnWrite=false, cacheIndexesOnWrite=false, cacheBloomsOnWrite=false, cacheEvictOnClose=false, cacheDataCompressed=false, prefetchOnOpen=false
+19/05/25 10:10:59 INFO compactions.CompactionConfiguration: size [134217728, 9223372036854775807, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; throttle point 2684354560; major period 604800000, major jitter 0.500000, min locality to compact 0.000000
+19/05/25 10:10:59 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/recovered.edits/2.seqid is closed by DFSClient_NONMAPREDUCE_-782149702_1
+19/05/25 10:10:59 INFO regionserver.HRegion: Onlined dbab42e83ae5459e16264b22f75eecf6; next sequenceid=2
+19/05/25 10:10:59 INFO regionserver.HRegionServer: Post open deploy tasks for testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6.
+19/05/25 10:10:59 INFO hbase.MetaTableAccessor: Updated row testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6. with server=krish-217,57877,1558793423029
+19/05/25 10:10:59 INFO master.RegionStates: Transition {dbab42e83ae5459e16264b22f75eecf6 state=OPENING, ts=1558793459038, server=krish-217,57877,1558793423029} to {dbab42e83ae5459e16264b22f75eecf6 state=OPEN, ts=1558793459112, server=krish-217,57877,1558793423029}
+19/05/25 10:10:59 INFO master.AssignmentManager: Bulk assigning done
+19/05/25 10:10:59 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed1 state from ENABLING to ENABLED
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* BlockManager: ask 127.0.0.1:57847 to delete [blk_1073741846_1022, blk_1073741847_1023, blk_1073741848_1024, blk_1073741849_1025]
+19/05/25 10:10:59 INFO client.HBaseAdmin: Created testCopyTabletWithRowRenamed1
+19/05/25 10:10:59 INFO hbase.Waiter: Waiting up to [60,000] milli-secs(wait.for.ratio=[1])
+19/05/25 10:10:59 INFO hbase.Waiter: Waiting up to [60,000] milli-secs(wait.for.ratio=[1])
+19/05/25 10:10:59 INFO master.HMaster: Client=krishdey//192.168.1.2 create &apos;testCopyTabletWithRowRenamed2&apos;, {NAME =&gt; &apos;family&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1&apos;, IN_MEMORY =&gt; &apos;false&apos;, KEEP_DELETED_CELLS =&gt; &apos;FALSE&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, TTL =&gt; &apos;FOREVER&apos;, COMPRESSION =&gt; &apos;NONE&apos;, MIN_VERSIONS =&gt; &apos;0&apos;, BLOCKCACHE =&gt; &apos;true&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;}
+19/05/25 10:10:59 INFO server.PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x16aef53fd170000 type:create cxid:0x404 zxid:0xf9 txntype:-1 reqpath:n/a Error Path:/hbase/table-lock/testCopyTabletWithRowRenamed2 Error:KeeperErrorCode = NoNode for /hbase/table-lock/testCopyTabletWithRowRenamed2
+19/05/25 10:10:59 INFO hdfs.StateChange: BLOCK* allocateBlock: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed2/.tmp/.tableinfo.0000000001. BP-766101069-192.168.1.2-1558793415286 blk_1073741854_1030{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW]]}
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030 src: /127.0.0.1:58064 dest: /127.0.0.1:57851
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030 src: /127.0.0.1:58065 dest: /127.0.0.1:57847
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030 src: /127.0.0.1:58066 dest: /127.0.0.1:57856
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58066, dest: /127.0.0.1:57856, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 2a22a541-450e-4f36-8808-7461afcad19c, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, duration: 7913411
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, type=LAST_IN_PIPELINE, downstreams=0:[] terminating
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57856 is added to blk_1073741854_1030{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-3a34709c-4263-44eb-a272-70441b646ba6:NORMAL:127.0.0.1:57856|FINALIZED]]} size 0
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58065, dest: /127.0.0.1:57847, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: dca8c372-7ddc-4bf3-bba4-321f20c73e43, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, duration: 9396788
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58064, dest: /127.0.0.1:57851, bytes: 312, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 9a8b6e7e-bb61-48ab-b275-7db5c1f77dd5, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, duration: 9544172
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741854_1030, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57847 is added to blk_1073741854_1030{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-3a34709c-4263-44eb-a272-70441b646ba6:NORMAL:127.0.0.1:57856|FINALIZED]]} size 0
+19/05/25 10:10:59 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed2/.tmp/.tableinfo.0000000001 is closed by DFSClient_NONMAPREDUCE_-36576917_1
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57851 is added to blk_1073741854_1030 size 312
+19/05/25 10:10:59 INFO regionserver.HRegion: creating HRegion testCopyTabletWithRowRenamed2 HTD == &apos;testCopyTabletWithRowRenamed2&apos;, {NAME =&gt; &apos;family&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1&apos;, IN_MEMORY =&gt; &apos;false&apos;, KEEP_DELETED_CELLS =&gt; &apos;FALSE&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, TTL =&gt; &apos;FOREVER&apos;, COMPRESSION =&gt; &apos;NONE&apos;, MIN_VERSIONS =&gt; &apos;0&apos;, BLOCKCACHE =&gt; &apos;true&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;} RootDir = hdfs://localhost:57846/user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp Table name == testCopyTabletWithRowRenamed2
+19/05/25 10:10:59 INFO hdfs.StateChange: BLOCK* allocateBlock: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed2/a41188c10fc8268bbfb8aefbf386849c/.regioninfo. BP-766101069-192.168.1.2-1558793415286 blk_1073741855_1031{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW]]}
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031 src: /127.0.0.1:58067 dest: /127.0.0.1:57856
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031 src: /127.0.0.1:58068 dest: /127.0.0.1:57851
+19/05/25 10:10:59 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031 src: /127.0.0.1:58069 dest: /127.0.0.1:57847
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58069, dest: /127.0.0.1:57847, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: dca8c372-7ddc-4bf3-bba4-321f20c73e43, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, duration: 6035408
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, type=LAST_IN_PIPELINE, downstreams=0:[] terminating
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58068, dest: /127.0.0.1:57851, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 9a8b6e7e-bb61-48ab-b275-7db5c1f77dd5, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, duration: 4414018
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57847 is added to blk_1073741855_1031{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-de30c698-59e0-4f05-9d29-cfa49866aa5e:NORMAL:127.0.0.1:57847|FINALIZED]]} size 0
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:59 INFO DataNode.clienttrace: src: /127.0.0.1:58067, dest: /127.0.0.1:57856, bytes: 64, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-36576917_1, offset: 0, srvID: 2a22a541-450e-4f36-8808-7461afcad19c, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, duration: 8118170
+19/05/25 10:10:59 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741855_1031, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57851 is added to blk_1073741855_1031{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-de30c698-59e0-4f05-9d29-cfa49866aa5e:NORMAL:127.0.0.1:57847|FINALIZED], ReplicaUnderConstruction[[DISK]DS-1583d07f-3736-4bca-ab06-540a15139aa4:NORMAL:127.0.0.1:57851|FINALIZED]]} size 0
+19/05/25 10:10:59 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57856 is added to blk_1073741855_1031{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-de30c698-59e0-4f05-9d29-cfa49866aa5e:NORMAL:127.0.0.1:57847|FINALIZED], ReplicaUnderConstruction[[DISK]DS-1583d07f-3736-4bca-ab06-540a15139aa4:NORMAL:127.0.0.1:57851|FINALIZED]]} size 0
+19/05/25 10:10:59 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/.tmp/data/default/testCopyTabletWithRowRenamed2/a41188c10fc8268bbfb8aefbf386849c/.regioninfo is closed by DFSClient_NONMAPREDUCE_-36576917_1
+19/05/25 10:10:59 INFO regionserver.HRegion: Closed testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c.
+19/05/25 10:11:00 INFO hbase.MetaTableAccessor: Added 1
+19/05/25 10:11:00 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed2 state from null to ENABLING
+19/05/25 10:11:00 INFO master.AssignmentManager: Bulk assigning 1 region(s) across 3 server(s), round-robin=true
+19/05/25 10:11:00 INFO master.AssignmentManager: Assigning 1 region(s) to krish-217,57885,1558793423505
+19/05/25 10:11:00 INFO master.RegionStates: Transition {a41188c10fc8268bbfb8aefbf386849c state=OFFLINE, ts=1558793460216, server=null} to {a41188c10fc8268bbfb8aefbf386849c state=PENDING_OPEN, ts=1558793460222, server=krish-217,57885,1558793423505}
+19/05/25 10:11:00 INFO regionserver.RSRpcServices: Open testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c.
+19/05/25 10:11:00 INFO master.RegionStates: Transition {a41188c10fc8268bbfb8aefbf386849c state=PENDING_OPEN, ts=1558793460222, server=krish-217,57885,1558793423505} to {a41188c10fc8268bbfb8aefbf386849c state=OPENING, ts=1558793460249, server=krish-217,57885,1558793423505}
+19/05/25 10:11:00 INFO hfile.CacheConfig: blockCache=LruBlockCache{blockCount=1, currentSize=1568312, freeSize=1525577800, maxSize=1527146112, heapSize=1568312, minSize=1450788736, minFactor=0.95, multiSize=725394368, multiFactor=0.5, singleSize=362697184, singleFactor=0.25}, cacheDataOnRead=true, cacheDataOnWrite=false, cacheIndexesOnWrite=false, cacheBloomsOnWrite=false, cacheEvictOnClose=false, cacheDataCompressed=false, prefetchOnOpen=false
+19/05/25 10:11:00 INFO compactions.CompactionConfiguration: size [134217728, 9223372036854775807, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; throttle point 2684354560; major period 604800000, major jitter 0.500000, min locality to compact 0.000000
+19/05/25 10:11:00 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed2/a41188c10fc8268bbfb8aefbf386849c/recovered.edits/2.seqid is closed by DFSClient_NONMAPREDUCE_-1241353281_1
+19/05/25 10:11:00 INFO regionserver.HRegion: Onlined a41188c10fc8268bbfb8aefbf386849c; next sequenceid=2
+19/05/25 10:11:00 INFO regionserver.HRegionServer: Post open deploy tasks for testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c.
+19/05/25 10:11:00 INFO hbase.MetaTableAccessor: Updated row testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c. with server=krish-217,57885,1558793423505
+19/05/25 10:11:00 INFO master.RegionStates: Transition {a41188c10fc8268bbfb8aefbf386849c state=OPENING, ts=1558793460249, server=krish-217,57885,1558793423505} to {a41188c10fc8268bbfb8aefbf386849c state=OPEN, ts=1558793460290, server=krish-217,57885,1558793423505}
+19/05/25 10:11:00 INFO master.AssignmentManager: Bulk assigning done
+19/05/25 10:11:00 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed2 state from ENABLING to ENABLED
+19/05/25 10:11:00 INFO client.HBaseAdmin: Created testCopyTabletWithRowRenamed2
+19/05/25 10:11:00 INFO hbase.Waiter: Waiting up to [60,000] milli-secs(wait.for.ratio=[1])
+19/05/25 10:11:00 INFO hbase.Waiter: Waiting up to [60,000] milli-secs(wait.for.ratio=[1])
+19/05/25 10:11:00 INFO client.HBaseAdmin: Started disable of testCopyTabletWithRowRenamed1
+19/05/25 10:11:00 INFO master.HMaster: Client=krishdey//192.168.1.2 disable testCopyTabletWithRowRenamed1
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741846_1022 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data2/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741846 for deletion
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741847_1023 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data1/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741847 for deletion
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741848_1024 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data2/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741848 for deletion
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741849_1025 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data1/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741849 for deletion
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741846_1022 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data2/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741846
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741847_1023 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data1/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741847
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741849_1025 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data1/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741849
+19/05/25 10:11:01 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741848_1024 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data2/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741848
+19/05/25 10:11:01 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed1 state from DISABLING to DISABLING
+19/05/25 10:11:01 INFO procedure.DisableTableProcedure: Offlining 1 regions.
+19/05/25 10:11:01 INFO master.RegionStates: Transition {dbab42e83ae5459e16264b22f75eecf6 state=OPEN, ts=1558793459115, server=krish-217,57877,1558793423029} to {dbab42e83ae5459e16264b22f75eecf6 state=PENDING_CLOSE, ts=1558793461388, server=krish-217,57877,1558793423029}
+19/05/25 10:11:01 INFO regionserver.RSRpcServices: Close dbab42e83ae5459e16264b22f75eecf6, moving to null
+19/05/25 10:11:01 INFO regionserver.HRegion: Flushing 1/1 column families, memstore=1.64 KB
+19/05/25 10:11:01 INFO hdfs.StateChange: BLOCK* allocateBlock: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/.tmp/6af8c0a369e144a695f7571ff90b0fed. BP-766101069-192.168.1.2-1558793415286 blk_1073741856_1032{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW]]}
+19/05/25 10:11:01 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032 src: /127.0.0.1:58070 dest: /127.0.0.1:57851
+19/05/25 10:11:01 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032 src: /127.0.0.1:58071 dest: /127.0.0.1:57856
+19/05/25 10:11:01 INFO datanode.DataNode: Receiving BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032 src: /127.0.0.1:58072 dest: /127.0.0.1:57847
+19/05/25 10:11:01 INFO DataNode.clienttrace: src: /127.0.0.1:58072, dest: /127.0.0.1:57847, bytes: 1110, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-782149702_1, offset: 0, srvID: dca8c372-7ddc-4bf3-bba4-321f20c73e43, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, duration: 6428292
+19/05/25 10:11:01 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, type=LAST_IN_PIPELINE, downstreams=0:[] terminating
+19/05/25 10:11:01 INFO DataNode.clienttrace: src: /127.0.0.1:58071, dest: /127.0.0.1:57856, bytes: 1110, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-782149702_1, offset: 0, srvID: 2a22a541-450e-4f36-8808-7461afcad19c, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, duration: 4717883
+19/05/25 10:11:01 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:11:01 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57847 is added to blk_1073741856_1032{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-75a948a9-48ed-4715-a177-9018551154d5:NORMAL:127.0.0.1:57856|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW]]} size 0
+19/05/25 10:11:01 INFO DataNode.clienttrace: src: /127.0.0.1:58070, dest: /127.0.0.1:57851, bytes: 1110, op: HDFS_WRITE, cliID: DFSClient_NONMAPREDUCE_-782149702_1, offset: 0, srvID: 9a8b6e7e-bb61-48ab-b275-7db5c1f77dd5, blockid: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, duration: 7727798
+19/05/25 10:11:01 INFO datanode.DataNode: PacketResponder: BP-766101069-192.168.1.2-1558793415286:blk_1073741856_1032, type=HAS_DOWNSTREAM_IN_PIPELINE terminating
+19/05/25 10:11:01 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57856 is added to blk_1073741856_1032{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-3a34709c-4263-44eb-a272-70441b646ba6:NORMAL:127.0.0.1:57856|FINALIZED]]} size 0
+19/05/25 10:11:01 INFO BlockStateChange: BLOCK* addStoredBlock: blockMap updated: 127.0.0.1:57851 is added to blk_1073741856_1032{blockUCState=UNDER_CONSTRUCTION, primaryNodeIndex=-1, replicas=[ReplicaUnderConstruction[[DISK]DS-954276c1-159f-4db9-9685-c20323934b5d:NORMAL:127.0.0.1:57851|RBW], ReplicaUnderConstruction[[DISK]DS-0e66248d-78b8-4622-98cb-1ac0c7f6e453:NORMAL:127.0.0.1:57847|RBW], ReplicaUnderConstruction[[DISK]DS-3a34709c-4263-44eb-a272-70441b646ba6:NORMAL:127.0.0.1:57856|FINALIZED]]} size 0
+19/05/25 10:11:01 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/.tmp/6af8c0a369e144a695f7571ff90b0fed is closed by DFSClient_NONMAPREDUCE_-782149702_1
+19/05/25 10:11:01 INFO regionserver.DefaultStoreFlusher: Flushed, sequenceid=15, memsize=1.6 K, hasBloomFilter=false, into tmp file hdfs://localhost:57846/user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/.tmp/6af8c0a369e144a695f7571ff90b0fed
+19/05/25 10:11:01 INFO regionserver.HStore: Added hdfs://localhost:57846/user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/family/6af8c0a369e144a695f7571ff90b0fed, entries=10, sequenceid=15, filesize=1.1 K
+19/05/25 10:11:01 INFO regionserver.HRegion: Finished memstore flush of ~1.64 KB/1680, currentsize=0 B/0 for region testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6. in 82ms, sequenceid=15, compaction requested=false
+19/05/25 10:11:01 INFO regionserver.HStore: Closed family
+19/05/25 10:11:01 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed1/dbab42e83ae5459e16264b22f75eecf6/recovered.edits/18.seqid is closed by DFSClient_NONMAPREDUCE_-782149702_1
+19/05/25 10:11:01 INFO regionserver.HRegion: Closed testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6.
+19/05/25 10:11:01 INFO master.RegionStates: Transition {dbab42e83ae5459e16264b22f75eecf6 state=PENDING_CLOSE, ts=1558793461388, server=krish-217,57877,1558793423029} to {dbab42e83ae5459e16264b22f75eecf6 state=OFFLINE, ts=1558793461485, server=krish-217,57877,1558793423029}
+19/05/25 10:11:01 INFO master.RegionStates: Offlined dbab42e83ae5459e16264b22f75eecf6 from krish-217,57877,1558793423029
+19/05/25 10:11:02 INFO BlockStateChange: BLOCK* BlockManager: ask 127.0.0.1:57851 to delete [blk_1073741848_1024, blk_1073741849_1025]
+19/05/25 10:11:02 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed1 state from DISABLING to DISABLED
+19/05/25 10:11:02 INFO procedure.DisableTableProcedure: Disabled table, testCopyTabletWithRowRenamed1, is completed.
+19/05/25 10:11:03 INFO client.HBaseAdmin: Disabled testCopyTabletWithRowRenamed1
+19/05/25 10:11:03 INFO master.HMaster: Client=krishdey//192.168.1.2 delete testCopyTabletWithRowRenamed1
+19/05/25 10:11:03 INFO hbase.MetaTableAccessor: Deleted [{ENCODED =&gt; dbab42e83ae5459e16264b22f75eecf6, NAME =&gt; &apos;testCopyTabletWithRowRenamed1,,1558793458434.dbab42e83ae5459e16264b22f75eecf6.&apos;, STARTKEY =&gt; &apos;&apos;, ENDKEY =&gt; &apos;&apos;}]
+19/05/25 10:11:03 INFO BlockStateChange: BLOCK* addToInvalidates: blk_1073741853_1029 127.0.0.1:57847 127.0.0.1:57851 127.0.0.1:57856 
+19/05/25 10:11:03 INFO BlockStateChange: BLOCK* addToInvalidates: blk_1073741852_1028 127.0.0.1:57856 127.0.0.1:57847 127.0.0.1:57851 
+19/05/25 10:11:04 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741848_1024 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data4/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741848 for deletion
+19/05/25 10:11:04 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741849_1025 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data3/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741849 for deletion
+19/05/25 10:11:04 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741849_1025 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data3/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741849
+19/05/25 10:11:04 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741848_1024 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data4/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741848
+19/05/25 10:11:04 INFO client.HBaseAdmin: Deleted testCopyTabletWithRowRenamed1
+19/05/25 10:11:04 INFO client.HBaseAdmin: Started disable of testCopyTabletWithRowRenamed2
+19/05/25 10:11:04 INFO master.HMaster: Client=krishdey//192.168.1.2 disable testCopyTabletWithRowRenamed2
+19/05/25 10:11:04 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed2 state from DISABLING to DISABLING
+19/05/25 10:11:04 INFO procedure.DisableTableProcedure: Offlining 1 regions.
+19/05/25 10:11:04 INFO master.RegionStates: Transition {a41188c10fc8268bbfb8aefbf386849c state=OPEN, ts=1558793460293, server=krish-217,57885,1558793423505} to {a41188c10fc8268bbfb8aefbf386849c state=PENDING_CLOSE, ts=1558793464836, server=krish-217,57885,1558793423505}
+19/05/25 10:11:04 INFO regionserver.RSRpcServices: Close a41188c10fc8268bbfb8aefbf386849c, moving to null
+19/05/25 10:11:04 INFO regionserver.HStore: Closed family
+19/05/25 10:11:04 INFO hdfs.StateChange: DIR* completeFile: /user/krishdey/test-data/6f33eba1-417f-4549-93c7-6e1c865ad56e/data/default/testCopyTabletWithRowRenamed2/a41188c10fc8268bbfb8aefbf386849c/recovered.edits/4.seqid is closed by DFSClient_NONMAPREDUCE_-1241353281_1
+19/05/25 10:11:04 INFO regionserver.HRegion: Closed testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c.
+19/05/25 10:11:04 INFO master.RegionStates: Transition {a41188c10fc8268bbfb8aefbf386849c state=PENDING_CLOSE, ts=1558793464836, server=krish-217,57885,1558793423505} to {a41188c10fc8268bbfb8aefbf386849c state=OFFLINE, ts=1558793464855, server=krish-217,57885,1558793423505}
+19/05/25 10:11:04 INFO master.RegionStates: Offlined a41188c10fc8268bbfb8aefbf386849c from krish-217,57885,1558793423505
+19/05/25 10:11:05 INFO BlockStateChange: BLOCK* BlockManager: ask 127.0.0.1:57851 to delete [blk_1073741852_1028, blk_1073741853_1029]
+19/05/25 10:11:05 INFO zookeeper.ZKTableStateManager: Moving table testCopyTabletWithRowRenamed2 state from DISABLING to DISABLED
+19/05/25 10:11:05 INFO procedure.DisableTableProcedure: Disabled table, testCopyTabletWithRowRenamed2, is completed.
+19/05/25 10:11:06 INFO client.HBaseAdmin: Disabled testCopyTabletWithRowRenamed2
+19/05/25 10:11:06 INFO master.HMaster: Client=krishdey//192.168.1.2 delete testCopyTabletWithRowRenamed2
+19/05/25 10:11:06 INFO hbase.MetaTableAccessor: Deleted [{ENCODED =&gt; a41188c10fc8268bbfb8aefbf386849c, NAME =&gt; &apos;testCopyTabletWithRowRenamed2,,1558793459671.a41188c10fc8268bbfb8aefbf386849c.&apos;, STARTKEY =&gt; &apos;&apos;, ENDKEY =&gt; &apos;&apos;}]
+19/05/25 10:11:06 INFO BlockStateChange: BLOCK* addToInvalidates: blk_1073741855_1031 127.0.0.1:57856 127.0.0.1:57851 127.0.0.1:57847 
+19/05/25 10:11:06 INFO BlockStateChange: BLOCK* addToInvalidates: blk_1073741854_1030 127.0.0.1:57847 127.0.0.1:57856 127.0.0.1:57851 
+19/05/25 10:11:07 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741852_1028 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data4/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741852 for deletion
+19/05/25 10:11:07 INFO impl.FsDatasetAsyncDiskService: Scheduling blk_1073741853_1029 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data3/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741853 for deletion
+19/05/25 10:11:07 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741853_1029 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data3/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741853
+19/05/25 10:11:07 INFO impl.FsDatasetAsyncDiskService: Deleted BP-766101069-192.168.1.2-1558793415286 blk_1073741852_1028 file /Hadoop/MYRIAD/myriad/target/test-data/5d1c2024-fb28-4b42-b030-c98c0659acee/dfscluster_85fde079-9742-4b65-9f58-3e221631188e/dfs/data/data4/current/BP-766101069-192.168.1.2-1558793415286/current/finalized/subdir0/subdir0/blk_1073741852
+19/05/25 10:11:07 INFO client.HBaseAdmin: Deleted testCopyTabletWithRowRenamed2
+</system-err>
+  </testcase>
+</testsuite>
