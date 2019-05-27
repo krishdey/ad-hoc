@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.jpmorgan.gti.hbase.mapreduce.TestHbaseCopyTable
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.543 sec
