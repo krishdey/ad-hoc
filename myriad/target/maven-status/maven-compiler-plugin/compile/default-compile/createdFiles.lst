@@ -1,5 +1,0 @@
-com/jpmorgan/gti/hbase/row/rename/MD5Util.class
-com/jpmorgan/gti/hbase/mapreduce/CopyTable.class
-com/jpmorgan/gti/hbase/mapreduce/RowKeyRenameImporter.class
-com/jpmorgan/gti/hbase/row/rename/RowKeyRename.class
-com/jpmorgan/gti/hbase/row/rename/DefaultRowKeyRenameImpl.class
