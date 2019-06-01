@@ -37,14 +37,13 @@ public class RowKeyRenameImporter {
 	public final static String WAL_DURABILITY = "import.wal.durability";
 	public final static String ROWKEY_RENAME_IMPL = "row.key.rename";
 	private static final byte[] HASH_QUALIFIER = Bytes.toBytes("hashedIdentifier");
-	
-	
+
 	public static class NodeKeyRenameImport extends TableMapper<ImmutableBytesWritable, Mutation> {
 		private List<UUID> clusterIds;
 		private Durability durability;
 		private RowKeyRename rowkeyRenameAlgo;
 		private static final byte[] NODE_FAMILY = Bytes.toBytes("node");
-		
+		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable();
 
 		/**
 		 * @param row     The current table row key.
@@ -73,7 +72,8 @@ public class RowKeyRenameImporter {
 		protected void processKV(ImmutableBytesWritable key, Result result, Context context, Put put)
 				throws IOException, InterruptedException {
 			LOG.info("Renaming the row " + Bytes.toString(key.get()));
-			ImmutableBytesWritable renameRowKey = rowkeyRenameAlgo.rowKeyRename(key);
+			
+			renameRowKey.set(rowkeyRenameAlgo.rowKeyRename(key).get());
 			for (Cell kv : result.rawCells()) {
 				if (put == null) {
 					put = new Put(renameRowKey.get());
@@ -171,6 +171,11 @@ public class RowKeyRenameImporter {
 		private static final byte[] Q_LINK_TYPE_ID = Bytes.toBytes("linktypeid");
 		private static final byte[] Q_RIGHT_NODE_ID = Bytes.toBytes("right_nodeid");
 
+		private ImmutableBytesWritable leftNodeId = new ImmutableBytesWritable();
+		private ImmutableBytesWritable linkTypeId = new ImmutableBytesWritable();
+		private ImmutableBytesWritable rightNodeId = new ImmutableBytesWritable();
+		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable();
+
 		/**
 		 * @param row     The current table row key.
 		 * @param value   The columns.
@@ -198,15 +203,13 @@ public class RowKeyRenameImporter {
 		protected void processKV(ImmutableBytesWritable key, Result result, Context context, Put put)
 				throws IOException, InterruptedException {
 			LOG.info("Renaming the row " + Bytes.toString(key.get()));
+			
 			// Get the left, link and right node
-			ImmutableBytesWritable leftNodeId = new ImmutableBytesWritable(
-					CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LEFT_NODE_ID)));
-			ImmutableBytesWritable linkTypeId = new ImmutableBytesWritable(
-					CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LINK_TYPE_ID)));
-			ImmutableBytesWritable rightNodeId = new ImmutableBytesWritable(
-					CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_RIGHT_NODE_ID)));
+			leftNodeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LEFT_NODE_ID)));
+			linkTypeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LINK_TYPE_ID)));
+			rightNodeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_RIGHT_NODE_ID)));
 
-			ImmutableBytesWritable renameRowKey = rowkeyRenameAlgo.rowKeyRename(leftNodeId, linkTypeId, rightNodeId);
+			renameRowKey.set(rowkeyRenameAlgo.rowKeyRename(leftNodeId, linkTypeId, rightNodeId).get());
 			for (Cell kv : result.rawCells()) {
 				if (put == null) {
 					put = new Put(renameRowKey.get());
@@ -225,6 +228,7 @@ public class RowKeyRenameImporter {
 				}
 			}
 		}
+
 
 		// helper: create a new KeyValue based on renaming of row Key
 		private static Cell convertKv(Cell kv, ImmutableBytesWritable renameRowKey) {
