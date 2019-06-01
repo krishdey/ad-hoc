@@ -37,13 +37,14 @@ public class RowKeyRenameImporter {
 	public final static String WAL_DURABILITY = "import.wal.durability";
 	public final static String ROWKEY_RENAME_IMPL = "row.key.rename";
 	private static final byte[] HASH_QUALIFIER = Bytes.toBytes("hashedIdentifier");
+	private static final String EMPTY_STRING="";
 
 	public static class NodeKeyRenameImport extends TableMapper<ImmutableBytesWritable, Mutation> {
 		private List<UUID> clusterIds;
 		private Durability durability;
 		private RowKeyRename rowkeyRenameAlgo;
 		private static final byte[] NODE_FAMILY = Bytes.toBytes("node");
-		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable();
+		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable(EMPTY_STRING.getBytes());
 
 		/**
 		 * @param row     The current table row key.
@@ -91,6 +92,7 @@ public class RowKeyRenameImporter {
 					context.write(key, put);
 				}
 			}
+			renameRowKey.set(EMPTY_STRING.getBytes());
 		}
 
 		// helper: create a new KeyValue based on renaming of row Key
@@ -171,10 +173,10 @@ public class RowKeyRenameImporter {
 		private static final byte[] Q_LINK_TYPE_ID = Bytes.toBytes("linktypeid");
 		private static final byte[] Q_RIGHT_NODE_ID = Bytes.toBytes("right_nodeid");
 
-		private ImmutableBytesWritable leftNodeId = new ImmutableBytesWritable();
-		private ImmutableBytesWritable linkTypeId = new ImmutableBytesWritable();
-		private ImmutableBytesWritable rightNodeId = new ImmutableBytesWritable();
-		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable();
+		private ImmutableBytesWritable leftNodeId = new ImmutableBytesWritable(EMPTY_STRING.getBytes());
+		private ImmutableBytesWritable linkTypeId = new ImmutableBytesWritable(EMPTY_STRING.getBytes());
+		private ImmutableBytesWritable rightNodeId = new ImmutableBytesWritable(EMPTY_STRING.getBytes());
+		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable(EMPTY_STRING.getBytes());
 
 		/**
 		 * @param row     The current table row key.
@@ -227,8 +229,16 @@ public class RowKeyRenameImporter {
 					context.write(key, put);
 				}
 			}
+			reset();
 		}
 
+		//reset
+		private void reset() {
+			leftNodeId.set(EMPTY_STRING.getBytes());
+			linkTypeId.set(EMPTY_STRING.getBytes());
+			rightNodeId.set(EMPTY_STRING.getBytes());
+			renameRowKey.set(EMPTY_STRING.getBytes());		
+		}
 
 		// helper: create a new KeyValue based on renaming of row Key
 		private static Cell convertKv(Cell kv, ImmutableBytesWritable renameRowKey) {
