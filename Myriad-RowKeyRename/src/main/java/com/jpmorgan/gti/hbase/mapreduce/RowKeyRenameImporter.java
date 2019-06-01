@@ -42,6 +42,27 @@ public class RowKeyRenameImporter {
 	private static List<UUID> clusterIds;
 	private static Durability durability;
 
+	// helper: create a new KeyValue based on renaming of row Key
+	private static Cell convertKv(Cell kv, ImmutableBytesWritable renameRowKey) {
+		byte[] newCfName = CellUtil.cloneFamily(kv);
+
+		kv = new KeyValue(renameRowKey.get(), // row buffer
+				renameRowKey.getOffset(), // row offset
+				renameRowKey.getLength(), // row length
+				newCfName, // CF buffer
+				0, // CF offset
+				kv.getFamilyLength(), // CF length
+				kv.getQualifierArray(), // qualifier buffer
+				kv.getQualifierOffset(), // qualifier offset
+				kv.getQualifierLength(), // qualifier length
+				kv.getTimestamp(), // timestamp
+				KeyValue.Type.codeToType(kv.getTypeByte()), // KV Type
+				kv.getValueArray(), // value buffer
+				kv.getValueOffset(), // value offset
+				kv.getValueLength()); // value length
+		return kv;
+	}
+	
 	private static void addPutToKv(Put put, Cell kv) throws IOException {
 		put.add(kv);
 	}
@@ -80,7 +101,7 @@ public class RowKeyRenameImporter {
 
 	/**
 	 * 
-	 * TODO:
+	 * NodeKeyRenameImport
 	 *
 	 */
 	public static class NodeKeyRenameImport extends TableMapper<ImmutableBytesWritable, Mutation> {
@@ -114,8 +135,9 @@ public class RowKeyRenameImporter {
 
 		protected void processKV(ImmutableBytesWritable key, Result result, Context context, Put put)
 				throws IOException, InterruptedException {
-			LOG.info("Renaming the row " + Bytes.toString(key.get()));
-
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Renaming the row " + Bytes.toString(key.get()));
+			}
 			renameRowKey.set(rowkeyRenameAlgo.rowKeyRename(key).get());
 			for (Cell kv : result.rawCells()) {
 				if (put == null) {
@@ -160,7 +182,7 @@ public class RowKeyRenameImporter {
 
 	/**
 	 * 
-	 * TODO
+	 * NodeLinkRenameImport
 	 *
 	 */
 	public static class NodeLinkRenameImport extends TableMapper<ImmutableBytesWritable, Mutation> {
@@ -201,8 +223,9 @@ public class RowKeyRenameImporter {
 
 		protected void processKV(ImmutableBytesWritable key, Result result, Context context, Put put)
 				throws IOException, InterruptedException {
-			LOG.info("Renaming the row " + Bytes.toString(key.get()));
-
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Renaming the row " + Bytes.toString(key.get()));
+			}
 			// Get the left, link and right node
 			leftNodeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LEFT_NODE_ID)));
 			linkTypeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LINK_TYPE_ID)));
@@ -254,26 +277,4 @@ public class RowKeyRenameImporter {
 			setDurabilityAnClusterIDs(conf, context);
 		}
 	}
-
-	// helper: create a new KeyValue based on renaming of row Key
-	private static Cell convertKv(Cell kv, ImmutableBytesWritable renameRowKey) {
-		byte[] newCfName = CellUtil.cloneFamily(kv);
-
-		kv = new KeyValue(renameRowKey.get(), // row buffer
-				renameRowKey.getOffset(), // row offset
-				renameRowKey.getLength(), // row length
-				newCfName, // CF buffer
-				0, // CF offset
-				kv.getFamilyLength(), // CF length
-				kv.getQualifierArray(), // qualifier buffer
-				kv.getQualifierOffset(), // qualifier offset
-				kv.getQualifierLength(), // qualifier length
-				kv.getTimestamp(), // timestamp
-				KeyValue.Type.codeToType(kv.getTypeByte()), // KV Type
-				kv.getValueArray(), // value buffer
-				kv.getValueOffset(), // value offset
-				kv.getValueLength()); // value length
-		return kv;
-	}
-
 }
