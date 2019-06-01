@@ -37,7 +37,7 @@ public class RowKeyRenameImporter {
 	public final static String WAL_DURABILITY = "import.wal.durability";
 	public final static String ROWKEY_RENAME_IMPL = "row.key.rename";
 	private static final byte[] HASH_QUALIFIER = Bytes.toBytes("hashedIdentifier");
-	private static final byte[] EMPTY_STRING_BYTES="".getBytes();
+	private static final byte[] EMPTY_STRING_BYTES=Bytes.toBytes("");
 
 	public static class NodeKeyRenameImport extends TableMapper<ImmutableBytesWritable, Mutation> {
 		private List<UUID> clusterIds;

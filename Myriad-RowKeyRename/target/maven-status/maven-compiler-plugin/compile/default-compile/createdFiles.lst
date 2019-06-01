@@ -1,4 +1,8 @@
 com/jpmorgan/gti/hbase/row/rename/MD5Util.class
+com/jpmorgan/gti/hbase/mapreduce/RowKeyRenameImporter$NodeKeyRenameImport.class
 com/jpmorgan/gti/hbase/mapreduce/CopyTable.class
 com/jpmorgan/gti/hbase/mapreduce/RowKeyRenameImporter.class
+com/jpmorgan/gti/hbase/mapreduce/RowKeyRenameImporter$NodeLinkRenameImport.class
 com/jpmorgan/gti/hbase/row/rename/RowKeyRename.class
+com/jpmorgan/gti/hbase/row/rename/DefaultRowKeyNodeRenameImpl.class
+com/jpmorgan/gti/hbase/row/rename/DefaultRowKeyNodeLinkRenameImpl.class
