@@ -62,7 +62,7 @@ public class RowKeyRenameImporter {
 				kv.getValueLength()); // value length
 		return kv;
 	}
-	
+
 	private static void addPutToKv(Put put, Cell kv) throws IOException {
 		put.add(kv);
 	}
@@ -196,6 +196,9 @@ public class RowKeyRenameImporter {
 		private ImmutableBytesWritable linkTypeId = new ImmutableBytesWritable(EMPTY_STRING_BYTES);
 		private ImmutableBytesWritable rightNodeId = new ImmutableBytesWritable(EMPTY_STRING_BYTES);
 		private ImmutableBytesWritable renameRowKey = new ImmutableBytesWritable(EMPTY_STRING_BYTES);
+		private Cell leftNodeCell = null;
+		private Cell linkTypeCell = null;
+		private Cell rightNodeCell = null;
 
 		/**
 		 * @param row     The current table row key.
@@ -227,9 +230,20 @@ public class RowKeyRenameImporter {
 				LOG.debug("Renaming the row " + Bytes.toString(key.get()));
 			}
 			// Get the left, link and right node
-			leftNodeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LEFT_NODE_ID)));
-			linkTypeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_LINK_TYPE_ID)));
-			rightNodeId.set(CellUtil.cloneValue(result.getColumnLatestCell(NODELINK_FAMILY, Q_RIGHT_NODE_ID)));
+			leftNodeCell = result.getColumnLatestCell(NODELINK_FAMILY, Q_LEFT_NODE_ID);
+			if (leftNodeCell != null) {
+				leftNodeId.set(CellUtil.cloneValue(leftNodeCell));
+			}
+			
+			linkTypeCell = result.getColumnLatestCell(NODELINK_FAMILY, Q_LINK_TYPE_ID);
+			if (linkTypeCell != null) {
+				linkTypeId.set(CellUtil.cloneValue(linkTypeCell));
+			}
+
+			rightNodeCell = result.getColumnLatestCell(NODELINK_FAMILY, Q_RIGHT_NODE_ID);
+			if (rightNodeCell != null) {
+				rightNodeId.set(CellUtil.cloneValue(rightNodeCell));
+			}
 
 			renameRowKey.set(rowkeyRenameAlgo.rowKeyRename(leftNodeId, linkTypeId, rightNodeId).get());
 			for (Cell kv : result.rawCells()) {
@@ -257,6 +271,9 @@ public class RowKeyRenameImporter {
 			linkTypeId.set(EMPTY_STRING_BYTES);
 			rightNodeId.set(EMPTY_STRING_BYTES);
 			renameRowKey.set(EMPTY_STRING_BYTES);
+			leftNodeCell = null;
+			linkTypeCell = null;
+			rightNodeCell = null;
 		}
 
 		@Override

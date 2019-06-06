@@ -248,7 +248,7 @@ public class TestHbaseCopyTable {
 			// put rows into the first table
 
 			Put p = new Put(Bytes.toBytes("row1"));
-			p.addColumn(FAMILY_NODELINK, Q_LEFT_NODE_ID, "krish".getBytes());
+			p.addColumn(FAMILY_NODELINK, Q_LEFT_NODE_ID, Bytes.toBytes("krish"));
 			p.addColumn(FAMILY_NODELINK, Q_LINK_TYPE_ID, "ramit".getBytes());
 			p.addColumn(FAMILY_NODELINK, Q_RIGHT_NODE_ID, "mahi".getBytes());
 			t1.put(p);
